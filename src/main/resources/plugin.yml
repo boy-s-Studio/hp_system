@@ -1,5 +1,5 @@
 name: Hp_system
 version: ${project.version}
-main: hp_system.hp_system.Hp_system
+main: com.boy_studio.get.javaplugin.Main
 api-version: 1.16
 description: Minecraft hp system plugin
