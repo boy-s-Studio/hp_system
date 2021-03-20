@@ -16,7 +16,6 @@ public final class Main extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
         
-        
     }
     
     @Override
