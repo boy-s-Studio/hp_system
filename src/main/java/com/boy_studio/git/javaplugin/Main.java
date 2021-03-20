@@ -1,5 +1,6 @@
 package com.boy_studio.git.javaplugin;
 
+import com.boy_studio.git.javaplugin.command.hp_onoff;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
@@ -15,6 +16,12 @@ public final class Main extends JavaPlugin {
     
         getConfig().options().copyDefaults(true);
         saveConfig();
+    
+        getCommand("hp_on").setExecutor(new hp_onoff());
+        getCommand("hp_on").setTabCompleter(new hp_onoff());
+    
+        getCommand("hp_off").setExecutor(new hp_onoff());
+        getCommand("hp_off").setTabCompleter(new hp_onoff());
         
     }
     
