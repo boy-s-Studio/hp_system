@@ -1,0 +1,5 @@
+name: Hp_system
+version: ${project.version}
+main: hp_system.hp_system.Hp_system
+api-version: 1.16
+description: Minecraft hp system plugin
