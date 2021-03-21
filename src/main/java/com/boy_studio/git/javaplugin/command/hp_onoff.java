@@ -19,8 +19,8 @@ public class hp_onoff implements CommandExecutor, TabExecutor {
         
         if(label.equalsIgnoreCase("hp_on")) {
             Main.getPlugin(Main.class).getConfig().set("hp", "t");
-            Main.getPlugin(Main.class).reloadConfig();
             Main.getPlugin(Main.class).saveConfig();
+            Main.getPlugin(Main.class).reloadConfig();
             sender.sendMessage("hp 상태가 on으로 변경되었습니다");
             sender.sendMessage(h);
             
@@ -29,14 +29,16 @@ public class hp_onoff implements CommandExecutor, TabExecutor {
         if(label.equalsIgnoreCase("hp_off")) {
         
             Main.getPlugin(Main.class).getConfig().set("hp", "f");
-            Main.getPlugin(Main.class).reloadConfig();
             Main.getPlugin(Main.class).saveConfig();
+            Main.getPlugin(Main.class).reloadConfig();
             sender.sendMessage("hp 상태가 off으로 변경되었습니다");
         
         }
         
         return false;
     }
+    
+    
     
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
