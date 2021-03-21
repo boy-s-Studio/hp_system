@@ -12,50 +12,26 @@ public class hp_onoff implements CommandExecutor, TabExecutor {
     
     public boolean hp_system = Main.getPlugin(Main.class).getConfig().getBoolean("hp");
     
+    String h = Main.getPlugin(Main.class).getConfig().getString("hp");
+    
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         
         if(label.equalsIgnoreCase("hp_on")) {
-            
-            if(hp_system == false) {
-    
-                Main.getPlugin(Main.class).getConfig().set("test", "ture");
-                sender.sendMessage("hp 상태가 on으로 변경되었습니다");
-                
-            }
-    
-            else if(hp_system == true) {
-                sender.sendMessage("hp 은 이미 on 입니다");
-            }
-            
-            else {
-    
-                Main.getPlugin(Main.class).getConfig().set("test", "ture");
-                sender.sendMessage("hp 상태가 on으로 변경되었습니다");
-                
-            }
+            Main.getPlugin(Main.class).getConfig().set("hp", "t");
+            Main.getPlugin(Main.class).reloadConfig();
+            Main.getPlugin(Main.class).saveConfig();
+            sender.sendMessage("hp 상태가 on으로 변경되었습니다");
+            sender.sendMessage(h);
             
         }
-    
+        
         if(label.equalsIgnoreCase("hp_off")) {
         
-            if(hp_system == true) {
-            
-                Main.getPlugin(Main.class).getConfig().set("hp", "false");
-                sender.sendMessage("hp 상태가 on으로 변경되었습니다");
-            
-            }
-        
-            else if(hp_system == false) {
-                sender.sendMessage("hp 은 이미 off 입니다");
-            }
-        
-            else {
-            
-                Main.getPlugin(Main.class).getConfig().set("hp", "ture");
-                sender.sendMessage("hp 상태가 off으로 변경되었습니다");
-            
-            }
+            Main.getPlugin(Main.class).getConfig().set("hp", "f");
+            Main.getPlugin(Main.class).reloadConfig();
+            Main.getPlugin(Main.class).saveConfig();
+            sender.sendMessage("hp 상태가 off으로 변경되었습니다");
         
         }
         
